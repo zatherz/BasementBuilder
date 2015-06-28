@@ -1,0 +1,214 @@
+Basement Builder (basementbuilder.github.io) Documentation
+----------------------------------------------------------
+Last update: 28.06.2015
+
+Table of Contents
+1. Menu Bar
+1.1. File
+1.2. Edit
+1.3. View
+1.4. Help
+2. Entity Palette
+2.1. Pickups
+2.2. Enemies
+2.3. Bosses
+2.4. Stage
+2.5. Collectibles
+3. Room Palette
+3.1. Filter
+3.1.1. Entity
+3.1.2. Type
+3.1.3. Weight
+3.1.4. Size
+3.2. Room List
+3.2.1. Context Menu
+3.2.1.1. Size
+3.2.1.2. Type
+3.2.1.3. Difficulty
+3.2.1.4. Weight
+3.2.1.5. Variant
+3.3. Action Bar
+3.3.1. Add
+3.3.2. Delete
+3.3.3. Duplicate
+3.3.4. Copy
+3.3.5. Export
+4. Editor
+4.1. Using the Editor
+5. Bugs
+6. Contributing
+----------------------------------------------------------
+
+
+----------------------------------------------------------
+1. Menu Bar
+----------------------------------------------------------
+The Menu Bar is located at the top of the running window. It includes 4 menus called File, Edit, View and Help.
+----------------------------------------------------------
+1.1. File
+----------------------------------------------------------
+The File menu includes standard options related to files with informations on shortcuts.
+
+* New (Ctrl+N) - Create a new stage bundle
+* Open (Ctrl+O) - Open a stage bundle
+* Save (Ctrl+S) - Save the currently edited stage bundle
+* Save As... (Ctrl+Shift+S) - Save under a different file name
+* Take Screenshot... (Ctrl+Alt+S) - Take a picture of the room currently opened in the Editor
+----------------------------------------------------------
+1.2. Edit
+----------------------------------------------------------
+The Edit menu includes options related to editing rooms with informations on shortcuts.
+
+* Copy (Ctrl+C) - Copy one or more entities
+* Cut (Ctrl+X) - Copy and remove one or more entities
+* Paste (Ctrl+P) - Paste one or more entities
+* Select All (Ctrl+A) - Select all entities in the Editor
+* Deselect (Ctrl+D) - Deselect all selected entities in the Editor
+----------------------------------------------------------
+1.3. View
+----------------------------------------------------------
+The View menu includes options related to the Editor and program layout.
+
+* Show Grid / Hide Grid (Ctrl+G) - Show or hide the grid
+* Use Aliased Counter / Use Bitfont Counter (Ctrl+Alt+A) - Use an aliased or bitmap font for the entity counter
+* Hide Enemy Painter / Show Enemy Painter (Ctrl+Alt+P) - Show or hide the Enemy Palette
+* Hide Room List / Show Room List (Ctrl+Alt+R) - Show or hide the Room List
+----------------------------------------------------------
+1.4. Help
+----------------------------------------------------------
+* About Basement Builder (none) - Show some short info about the program and contributors
+* Basement Builder Documentation (none) - Open this file
+----------------------------------------------------------
+
+----------------------------------------------------------
+2. Entity Palette
+----------------------------------------------------------
+The Entity Palette is a pane on the left of the GUI that allows you to select the entity to paint in the Editor. It contains 5 tabs - Pickups, Enemies, Bosses, Stage and Collectibles.
+Note that custom variants/subtypes of entities do not appear in this menu.
+----------------------------------------------------------
+2.1. Pickups
+----------------------------------------------------------
+This tab includes pickups (hearts, bombs, coins, chests, cards etc.).
+----------------------------------------------------------
+2.2. Enemies
+----------------------------------------------------------
+This tab includes entities that will try to hurt Isaac in some way (shooting bullets, touching etc.).
+----------------------------------------------------------
+2.3. Bosses
+----------------------------------------------------------
+This tab includes enemies that have a visible health bar and appear on some floors as an enemy that you have to kill in order to beat the floor.
+----------------------------------------------------------
+2.4. Stage
+----------------------------------------------------------
+This tab includes elements of the stage (rocks, floor exits, fires etc.).
+----------------------------------------------------------
+2.5. Collectibles
+----------------------------------------------------------
+This tab includes item Isaac can pick up in order to change aspects of the game (health, damage, speed, tears etc.)
+----------------------------------------------------------
+
+----------------------------------------------------------
+3. Room Palette
+----------------------------------------------------------
+The Room Palette is a pane on the right of the GUI that allows you to filter rooms, view them in the Editor, remove them, add them and more.
+----------------------------------------------------------
+3.1. Filter
+----------------------------------------------------------
+The Filter allows you to filter rooms by Entities, Type, Weight and Size.
+----------------------------------------------------------
+3.1.1. Entities
+----------------------------------------------------------
+This filter only shows rooms containing the currently selected entity in the Entity Palette. If no entity is selected, it does nothing.
+----------------------------------------------------------
+3.1.2. Type
+----------------------------------------------------------
+This filter only shows rooms of the specific type (Normal, Treasure Room etc.). Upon selecting it, it shows a list with all possible room types.
+----------------------------------------------------------
+3.1.3. Weight
+----------------------------------------------------------
+This filter only shows rooms with the specific probability of generating (called "Weight"). Upon selecting it, it shows a list with all the possible weight numbers.
+----------------------------------------------------------
+3.1.4. Size
+----------------------------------------------------------
+This filter only shows rooms with the specific size. Upon selecting it, it shows a list with all the possible sizes.
+----------------------------------------------------------
+3.2. Room List
+----------------------------------------------------------
+The Room List is a list of all rooms currently existing in the loaded/created stage bundle.
+----------------------------------------------------------
+3.2.1. Context Menu
+----------------------------------------------------------
+Right clicking any room will show a context menu with various options, from top respectively: Size, Type, Difficulty, Weight and Variant.
+----------------------------------------------------------
+3.2.1.1. Size
+----------------------------------------------------------
+Size pops up the list that you can use to set the size of the room.
+----------------------------------------------------------
+3.2.1.2. Type
+----------------------------------------------------------
+Type is a list that sets the type of the room (Normal Room, Treasure Room etc.)
+----------------------------------------------------------
+3.2.1.3. Difficulty
+----------------------------------------------------------
+Difficulty sets the difficulty of the room. This is assumed to be related to Hard Mode, where the higher the number is the more chance to spawn while in Hard Mode.
+----------------------------------------------------------
+3.2.1.4. Weight
+----------------------------------------------------------
+Weight is a list that shows all the possible numbers you can set as the probability of a room being generated.
+----------------------------------------------------------
+3.2.1.5. Variant
+----------------------------------------------------------
+Variant is a number box that defines the variant of the room. This is used by the game for example to recognize which Super Special Room should get which background and is generally used for hardcoded rooms, like Boss Rooms. Setting the variant to one that is already in use will make both of them possible to appear, which you can use to add more boss rooms of a specific boss than normally possible.
+----------------------------------------------------------
+3.3. Action Bar
+----------------------------------------------------------
+The Action Bar sits below the Room List. It includes 5 buttons: Add, Delete, Duplicate, Copy and Export.
+----------------------------------------------------------
+3.3.1. Add
+----------------------------------------------------------
+The Add button adds a new room to the Room List available for editing.
+----------------------------------------------------------
+3.3.2. Delete
+----------------------------------------------------------
+The Delete button removes the currently selected room in the Room List.
+----------------------------------------------------------
+3.3.3. Duplicate
+----------------------------------------------------------
+The Duplicate button makes a copy of the selected room preserving size, entities etc. and bumps the Variant number by one.
+----------------------------------------------------------
+3.3.4. Copy
+----------------------------------------------------------
+The Copy button makes a copy of the selected room preserving size, entities etc. without changing the Variant number as Duplicate does. Using this button to create new Boss and Super Secret Rooms instead of Duplicate is preferred.
+----------------------------------------------------------
+3.3.5. Export
+----------------------------------------------------------
+The Export button exports the currently selected rooms in the Room List to a new stage bundle.
+----------------------------------------------------------
+
+----------------------------------------------------------
+4. Editor
+----------------------------------------------------------
+The Editor is the area located in the middle of the GUI that allows you to edit the currently selected room in the Room List.
+----------------------------------------------------------
+4.1. Using the Editor
+----------------------------------------------------------
+Pressing the left mouse button in the Editor over an entity will select it.
+Pressing the right mouse button in the Editor will place a new entity selected in the Entity Palette.
+Press and hold the left mouse button over an entity to move it.
+Press the left mouse button over an empty space and move it while holding to create a selection box to select multiple entities.
+Hold Control while selecting entities to select multiple entities.
+----------------------------------------------------------
+
+----------------------------------------------------------
+5. Bugs
+----------------------------------------------------------
+If you find any bugs, report them on the GitHub Issue tracker: https://github.com/zatherz/basementbuilder/issues.
+----------------------------------------------------------
+
+----------------------------------------------------------
+6. Contributing
+----------------------------------------------------------
+The repository of Basement Builder is located on GitHub: https://github.com/zatherz/basementbuilder.
+Information about contributors and a Windows binary download can be found on the website: http://basementbuilder.github.io/.
+Feel free to send pull requests!
+----------------------------------------------------------

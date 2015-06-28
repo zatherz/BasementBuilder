@@ -28,8 +28,18 @@ from PyQt5.QtWidgets import *
  
 import struct, os
 import xml.etree.ElementTree as ET
+import subprocess
  
- 
+########################
+#         Misc         #
+########################
+
+def openFile(file):
+        if sys.platform in ("linux", "linux2", "linux3"):
+                subprocess.call(["xdg-open", file])
+        else:
+                os.startfile(file)
+
 ########################
 #       XML Data       #
 ########################
@@ -1492,7 +1502,7 @@ class EntityPalette(QWidget):
                 self.tabs = QTabWidget()
                 self.layout.addWidget(self.tabs)
  
-                for group in ["Pickups", "Enemies", "Bosses", "Stage", "Collect"]:
+                for group in ["Pickups", "Enemies", "Bosses", "Stage", "Collectibles"]:
  
                         listView = QListView()
                         listView.setFlow(QListView.LeftToRight)
@@ -1510,7 +1520,7 @@ class EntityPalette(QWidget):
                         if group == "Bosses":
                                 listView.setIconSize(QSize(52,52))
  
-                        if group == "Collect":
+                        if group == "Collectibles":
                                 listView.setIconSize(QSize(32,64))
  
                         self.tabs.addTab(listView, group)
@@ -2026,8 +2036,7 @@ class MainWindow(QMainWindow):
  
         @pyqtSlot(bool)
         def goToHelp(self):
-                QDesktopServices().openUrl(QUrl('http://www.reddit.com/r/themoddingofisaac'))
- 
+                openFile("resources/Documentation.txt")
  
 if __name__ == '__main__':
  
