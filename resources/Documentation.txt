@@ -197,6 +197,8 @@ Pressing the right mouse button in the Editor will place a new entity selected i
 Press and hold the left mouse button over an entity to move it.
 Press the left mouse button over an empty space and move it while holding to create a selection box to select multiple entities.
 Hold Control while selecting entities to select multiple entities.
+When an entity is selected, it will display the ID (above), variant (below, "v = ...") and subtype (below, "s = ...").
+Press -/+ to change the ID, Alt + -/+ to change the variant and Ctrl + -/+ to change the subtype.
 ----------------------------------------------------------
 
 ----------------------------------------------------------
