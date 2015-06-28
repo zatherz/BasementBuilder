@@ -2,8 +2,8 @@
 Binding of Isaac: Rebirth stage bundle editor
 
 # Dependencies
-Python 3
-PyQt5
+* Python 3
+* PyQt5
 
 # Running on Linux and Mac OS X
     python BasementBuilder.py
