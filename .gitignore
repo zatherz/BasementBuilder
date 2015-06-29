@@ -1,2 +1,5 @@
 build/*
 win_setup.py
+isaac
+log.txt
+log-err.txt
