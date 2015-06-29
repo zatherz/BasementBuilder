@@ -45,7 +45,7 @@ def openFile(file):
 ########################
  
 def getEntityXML():
-        tree = ET.parse('resources/Entities.xml')
+        tree = ET.parse(os.getcwd() + '/resources/Entities.xml')
         root = tree.getroot()
  
         return root
@@ -70,7 +70,7 @@ class RoomScene(QGraphicsScene):
  
                 # Make the bitfont
                 q = QImage()
-                q.load('resources/UI/Bitfont.png')
+                q.load(os.getcwd() + '/resources/UI/Bitfont.png')
  
                 self.bitfont = [QPixmap.fromImage(q.copy(i*12,0,12,12)) for i in range(10)]
                 self.bitText = True
@@ -137,7 +137,7 @@ class RoomScene(QGraphicsScene):
                         roomBG = mainWindow.roomList.selectedRoom().roomBG
  
                 tile = QImage()
-                tile.load('resources/Backgrounds/{0}'.format(self.BG[roomBG-1]))
+                tile.load(os.getcwd() + '/resources/Backgrounds/{0}'.format(self.BG[roomBG-1]))
  
                 corner = tile.copy(             QRect(0,        0,      26*7,   26*4)   )
                 vert =   tile.copy(             QRect(26*7,     0,      26*2,   26*6)   )
@@ -444,7 +444,7 @@ class Entity(QGraphicsItem):
  
                 if self.entity['Type'] is 5 and self.entity['Variant'] is 100:
                         i = QImage()
-                        i.load('resources/Entities/5.100.0 - Collectible.png')
+                        i.load(os.getcwd() + '/resources/Entities/5.100.0 - Collectible.png')
  
                         d = QImage()
                         d.load(en.get('Image'))
@@ -597,8 +597,8 @@ class Door(QGraphicsItem):
                 else:
                         self.moveBy(0, -13)
  
-                self.image = QImage('resources/Backgrounds/Door.png').transformed(tr)
-                self.disabledImage = QImage('resources/Backgrounds/DisabledDoor.png').transformed(tr)
+                self.image = QImage(os.getcwd() + '/resources/Backgrounds/Door.png').transformed(tr)
+                self.disabledImage = QImage(os.getcwd() + '/resources/Backgrounds/DisabledDoor.png').transformed(tr)
        
         def paint(self, painter, option, widget):
  
@@ -698,7 +698,7 @@ class Room(QListWidgetItem):
                 """Renders the mini-icon for display."""
  
                 q = QImage()
-                q.load('resources/UI/RoomIcons.png')
+                q.load(os.getcwd() + '/resources/UI/RoomIcons.png')
  
                 i = QIcon(QPixmap.fromImage(q.copy(self.roomType*16,0,16,16)))
  
@@ -760,7 +760,7 @@ class RoomDelegate(QStyledItemDelegate):
  
         def __init__(self):
  
-                self.pixmap = QPixmap('resources/UI/CurrentRoom.png')
+                self.pixmap = QPixmap(os.getcwd() + '/resources/UI/CurrentRoom.png')
                 QStyledItemDelegate.__init__(self)
  
         def paint(self, painter, option, index):
@@ -819,7 +819,7 @@ class RoomSelector(QWidget):
                 self.filter.setSpacing(4)
  
                 fq = QImage()
-                fq.load('resources/UI/FilterIcons.png')
+                fq.load(os.getcwd() + '/resources/UI/FilterIcons.png')
                
                 # Set the custom data
                 self.filter.typeData = -1
@@ -843,7 +843,7 @@ class RoomSelector(QWidget):
                 typeMenu = QMenu()
  
                 q = QImage()
-                q.load('resources/UI/RoomIcons.png')
+                q.load(os.getcwd() + '/resources/UI/RoomIcons.png')
  
                 self.typeToggle.setIcon(QIcon(QPixmap.fromImage(fq.copy(1*24+4,4,16,16))))
                 act = typeMenu.addAction(QIcon(QPixmap.fromImage(fq.copy(1*24+4,4,16,16))), '')
@@ -864,7 +864,7 @@ class RoomSelector(QWidget):
                 weightMenu = FilterMenu()
  
                 q = QImage()
-                q.load('resources/UI/WeightIcons.png')
+                q.load(os.getcwd() + '/resources/UI/WeightIcons.png')
  
                 self.weightToggle.setIcon(QIcon(QPixmap.fromImage(fq.copy(2*24,0,24,24))))
                 act = weightMenu.addAction(QIcon(QPixmap.fromImage(fq.copy(2*24,0,24,24))), '')
@@ -888,7 +888,7 @@ class RoomSelector(QWidget):
                 sizeMenu = FilterMenu()
  
                 q = QImage()
-                q.load('resources/UI/SizeIcons.png')
+                q.load(os.getcwd() + '/resources/UI/SizeIcons.png')
  
                 self.sizeToggle.setIcon(QIcon(QPixmap.fromImage(fq.copy(3*24,0,24,24))))
                 act = sizeMenu.addAction(QIcon(QPixmap.fromImage(fq.copy(3*24,0,24,24))), '')
@@ -2036,7 +2036,7 @@ class MainWindow(QMainWindow):
  
         @pyqtSlot(bool)
         def goToHelp(self):
-                openFile("resources/Documentation.txt")
+                openFile(os.getcwd() + '/resources/Documentation.txt')
  
 if __name__ == '__main__':
  
@@ -2047,12 +2047,12 @@ if __name__ == '__main__':
  
         # Application
         app = QApplication(sys.argv)
-        app.setWindowIcon(QIcon('resources/UI/BasementBuilder.png'))
+        app.setWindowIcon(QIcon(os.getcwd() + '/resources/UI/BasementBuilder.png'))
  
         settings = QSettings('RoomEditor', 'Binding of Isaac Rebirth: Room Editor')
  
         mainWindow = MainWindow()
-        mainWindow.setWindowIcon(QIcon('resources/UI/BasementBuilder-Small.png'))
+        mainWindow.setWindowIcon(QIcon(os.getcwd() + '/resources/UI/BasementBuilder-Small.png'))
         mainWindow.setGeometry(100, 500, 1280, 600)
         mainWindow.show()
  
