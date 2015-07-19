@@ -326,6 +326,7 @@
 	<entity BaseHP="20" Group="Organs" ID="231" Image="resources/Entities/231.0.0 - Nerve Ending.png" Kind="Enemies" Name="Nerve Ending" Subtype="0" Variant="0" />
 	<entity BaseHP="20" Group="Other" ID="234" Image="resources/Entities/234.0.0 - One Tooth.png" Kind="Enemies" Name="One Tooth" Subtype="0" Variant="0" />
 	<entity BaseHP="100" Group="Stones" ID="235" Image="resources/Entities/235.0.0 - Gaping Maw.png" Kind="Enemies" Name="Gaping Maw" Subtype="0" Variant="0" />
+	<entity BaseHP="100" Group="Stones" ID="236" Image="resources/Entities/236.0.0 - Broken Gaping Maw.png" Kind="Enemies" Name="Broken Gaping Maw" Subtype="0" Variant="0" />
 	<entity BaseHP="24" Champion="1" Group="Other" ID="237" Image="resources/Entities/237.0.0 - Gurgling.png" Kind="Enemies" Name="Gurgling" Subtype="0" Variant="0" />
 	<entity BaseHP="90" Boss="1" Group="Boss Rooms" ID="237" Image="resources/Entities/237.1.0 - Gurgling (boss).png" Kind="Bosses" Name="Gurgling (boss)" Subtype="0" Variant="1" />
 	<entity BaseHP="10" Group="Gapers" ID="238" Image="resources/Entities/238.0.0 - Splasher.png" Kind="Enemies" Name="Splasher" Subtype="0" Variant="0" />
