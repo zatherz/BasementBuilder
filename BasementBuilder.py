@@ -413,7 +413,6 @@ class Entity(QGraphicsItem):
                 self.entity['pixmap'] = None
 
  
-                print("Inside entity constructor", x, y, mytype, variant, subtype, weight);
                 self.getEntityInfo(mytype, subtype, variant)
  
                 self.updatePosition()
@@ -429,7 +428,6 @@ class Entity(QGraphicsItem):
                 global entityXML
                
                 tmp_subtype = subtype
-                print(entityXML.find("entity[@ID='{0}'][@Subtype='{1}'][@Variant='{2}']".format(t, subtype, variant)))
                 while entityXML.find("entity[@ID='{0}'][@Subtype='{1}'][@Variant='{2}']".format(t, subtype, variant)) is None:
                         if subtype > 0:
                                 subtype = subtype -1
@@ -1096,7 +1094,6 @@ class RoomSelector(QWidget):
                                         sizeCond = True
                                 if w is 26 and h is 14 and text == 'Large':
                                         sizeCond = True
-                                print("Text:", text)
  
                         # Filter em' out
                         if entityCond and typeCond and weightCond and sizeCond:
@@ -1740,7 +1737,6 @@ class MainWindow(QMainWindow):
                                 for x in enumerate(y[1]):
                                         for entity in x[1]:
                                                 e = Entity(x[0], y[0], entity[0], entity[1], entity[2], entity[3])
-                                                print("Ent: ", x[0], y[0], entity[0], entity[1], entity[2], entity[3])
                                                 self.scene.addItem(e)
  
                         # Make the current Room mark for clearer multi-selection
